@@ -1,0 +1,21 @@
+@import "src/styles/_dimensions.scss";
+
+.base-layout {
+  display: grid;
+  grid-template-rows: $nav-height minmax(
+      calc(100vh - #{$nav-height}),
+      max-content
+    );
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "nav"
+    "cont";
+}
+
+.page-content {
+  grid-area: cont;
+
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+}

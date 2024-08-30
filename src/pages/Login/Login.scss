@@ -1,0 +1,225 @@
+$box-width: 460px;
+
+.login {
+  display: grid;
+  grid-template-areas: "logo form";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
+
+  .login-logo {
+    grid-area: logo;
+    background-color: var(--mainColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .admin-login-logo {
+      width: 261px;
+      height: 344px;
+    }
+  }
+
+  .login-form {
+    grid-area: form;
+    background-color: var(--secondaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .login-box {
+      overflow-y: auto;
+      width: 60%;
+      min-height: 400px;
+      max-height: 85vh;
+      height: fit-content;
+      padding-block: 3rem;
+      background-color: var(--secondaryColor);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-block: auto;
+      gap: 30px;
+      align-items: center;
+      p {
+        font-family: "Open Sans", "Noto Sans Arabic", sans-serif;
+        color: black;
+        font-size: 35px;
+      }
+
+      .main-input-label {
+        width: 80%;
+        .main-input {
+          width: 100%;
+        }
+      }
+      .main-button {
+        width: 80%;
+        height: 50px;
+      }
+
+      .login-user-type {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        .login-as {
+          font-size: 15px;
+          color: var(--mainColor);
+        }
+        .check-field {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .form-check {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+          }
+        }
+      }
+      .login-footer {
+        font-size: 1rem;
+      }
+    }
+
+    .lang {
+      position: absolute;
+      top: 10%;
+      right: 8%;
+      [dir="rtl"] & {
+        right: unset;
+        left: 6%;
+      }
+      button {
+        font-family: "Open Sans", "Noto Sans Arabic", sans-serif;
+        font-size: 16px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        transition: all 0.4s;
+        letter-spacing: 1px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover {
+          color: var(--mainColor);
+        }
+      }
+    }
+
+    .app-logo-small {
+      display: none;
+      .login-logo-small {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .login {
+    .login-form {
+      .login-box {
+        width: 80%;
+      }
+      .lang {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .login {
+    margin-block: 3rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "form";
+    .login-logo {
+      display: none;
+    }
+    .login-form {
+      display: flex;
+      gap: 20px;
+      flex-direction: column;
+      .login-box {
+        width: 460px;
+        min-height: 400px;
+        .main-input-label {
+          width: 80%;
+          .main-input {
+            width: 100%;
+          }
+        }
+        .main-button {
+          width: 80%;
+        }
+      }
+      .app-logo-small {
+        display: unset;
+        .login-logo-small {
+          width: 170px;
+          height: 163px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    grid-template-columns: 1fr;
+    grid-template-areas: "form";
+    .login-logo {
+      display: none;
+    }
+    .login-form {
+      .login-box {
+        width: 80%;
+        min-height: 400px;
+
+        .main-input-label {
+          width: 80%;
+          .main-input {
+            width: 100%;
+          }
+        }
+        .main-button {
+          width: 80%;
+        }
+      }
+
+      .app-logo-small {
+        display: unset;
+        .login-logo-small {
+          width: 145px;
+          height: 150px;
+        }
+      }
+    }
+  }
+}
+
+[dir="rtl"] {
+  .login {
+    .login-form {
+      .app-logo-small {
+        .login-logo-small {
+          text {
+            transform: translate(4854 -1559) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.link-item {
+  color: var(--mainColor);
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity cubic-bezier(0, 1.14, 0.57, 1) 250ms;
+  &:hover {
+    opacity: 0.8;
+  }
+}

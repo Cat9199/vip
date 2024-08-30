@@ -1,0 +1,35 @@
+@import "src/styles/colors";
+
+.main-button {
+  border: none;
+
+  font-family: "Noto Sans Arabic", sans-serif;
+  cursor: pointer;
+  transition: all 0.4s;
+  text-align: center;
+
+  &:disabled {
+    cursor: default;
+    opacity: 80%;
+  }
+
+  /* colors */
+
+  &.primary {
+    background-color: $primary;
+    color: white;
+    &:hover:not(:disabled) {
+      outline: 1px solid darken($color: $primary, $amount: 10);
+    }
+  }
+}
+
+.google-button {
+  background-color: #cf4332 !important;
+  color: antiquewhite !important;
+}
+
+.facebook-button {
+  background-color: #5890ff !important;
+  color: antiquewhite !important;
+}

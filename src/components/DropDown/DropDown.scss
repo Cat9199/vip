@@ -1,0 +1,89 @@
+.dropdown-menu {
+  position: relative;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    user-select: none;
+    transform: translate(-50%, 0);
+    min-width: fit-content;
+    border-radius: 0.5rem;
+    padding-block: 0.5rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    opacity: 0;
+    animation: fade-in 50ms ease-in-out forwards;
+
+    * {
+      white-space: nowrap;
+    }
+  }
+
+  li {
+    padding-block: 5px;
+  }
+
+  a {
+    width: 100%;
+    display: block;
+    padding-inline: 0.5rem;
+    padding-block: 0.15rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: color ease-in-out 200ms;
+    text-transform: capitalize;
+    &:hover {
+      color: orangered;
+    }
+  }
+  button {
+    background-color: #ccc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-up {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(180deg);
+}
+
+.animate-down {
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.animate {
+  animation-name: rotate;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
